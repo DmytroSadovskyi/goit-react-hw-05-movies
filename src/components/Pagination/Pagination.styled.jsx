@@ -5,13 +5,15 @@ export const StyledReactPaginate = styled(ReactPaginate)`
   display: flex;
   flex-wrap: nowrap;
   padding: 0;
-
+  margin-bottom: 30px;
   color: blue;
   justify-content: center;
   align-items: center;
   list-style: none;
-  gap: 5px;
 
+  @media screen and (min-width: 768px) {
+    gap: 5px;
+  }
   .previous {
     padding: 5px;
     background-color: gainsboro;
