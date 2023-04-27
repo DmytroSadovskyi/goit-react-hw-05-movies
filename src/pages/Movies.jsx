@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import Searchbar from 'components/Searchbar/Searchbar';
 import Pagination from 'components/Pagination/Pagination';
 import Loader from 'components/Loader/Loader';
+import toast, { Toaster } from 'react-hot-toast';
 
 import MoviesList from 'components/MoviesList/MoviesList';
 import { fetchMoviesByName } from 'services/movie-api';
@@ -45,7 +46,7 @@ const Movies = () => {
     e.preventDefault();
     const query = e.target.query.value;
     if (!query) {
-      alert('Please type something');
+      toast.error('Please type something');
       return;
     }
     setSearchParams({ query });
@@ -79,6 +80,7 @@ const Movies = () => {
               />
             </>
           )}
+          <Toaster />
         </Container>
       )}
     </main>
