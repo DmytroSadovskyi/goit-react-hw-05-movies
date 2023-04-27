@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-export const Background = styled.div`
+export const LoaderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
