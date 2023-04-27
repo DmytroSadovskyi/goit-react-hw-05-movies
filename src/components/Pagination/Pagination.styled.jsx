@@ -15,21 +15,31 @@ export const StyledReactPaginate = styled(ReactPaginate)`
     gap: 5px;
   }
   .previous {
-    padding: 5px;
+    padding: 2px;
+    @media screen and (min-width: 768px) {
+      padding: 5px;
+    }
+
     background-color: gainsboro;
     border-radius: 5px;
     cursor: pointer;
   }
 
   .next {
-    padding: 5px;
+    padding: 2px;
+    @media screen and (min-width: 768px) {
+      padding: 5px;
+    }
     background-color: gainsboro;
     border-radius: 5px;
     cursor: pointer;
   }
 
   .page {
-    padding: 5px 10px;
+    padding: 2px;
+    @media screen and (min-width: 768px) {
+      padding: 5px;
+    }
     background-color: gainsboro;
     border-radius: 5px;
     cursor: pointer;
