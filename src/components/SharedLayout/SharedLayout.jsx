@@ -11,7 +11,7 @@ export const SharedLayout = () => {
           <span role="img" aria-label="movie icon">
             <BiMoviePlay size="40" />
           </span>
-          Movie App
+          Movies App
         </Logo>
         <nav>
           <Link to="/" end>
