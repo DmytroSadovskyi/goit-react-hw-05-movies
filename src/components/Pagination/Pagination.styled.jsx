@@ -4,6 +4,7 @@ import ReactPaginate from 'react-paginate';
 export const StyledReactPaginate = styled(ReactPaginate)`
   display: flex;
   flex-wrap: nowrap;
+  padding: 0;
 
   color: blue;
   justify-content: center;
