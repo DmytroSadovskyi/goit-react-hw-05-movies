@@ -15,9 +15,9 @@ export const StyledReactPaginate = styled(ReactPaginate)`
     gap: 5px;
   }
   .previous {
-    padding: 2px;
+    padding: 3px 3px;
     @media screen and (min-width: 768px) {
-      padding: 5px;
+      padding: 5px 10px;
     }
 
     background-color: gainsboro;
@@ -26,9 +26,9 @@ export const StyledReactPaginate = styled(ReactPaginate)`
   }
 
   .next {
-    padding: 2px;
+    padding: 3px 3px;
     @media screen and (min-width: 768px) {
-      padding: 5px;
+      padding: 5px 10px;
     }
     background-color: gainsboro;
     border-radius: 5px;
@@ -36,9 +36,9 @@ export const StyledReactPaginate = styled(ReactPaginate)`
   }
 
   .page {
-    padding: 2px;
+    padding: 3px 3px;
     @media screen and (min-width: 768px) {
-      padding: 5px;
+      padding: 5px 10px;
     }
     background-color: gainsboro;
     border-radius: 5px;
