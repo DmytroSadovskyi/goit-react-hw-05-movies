@@ -4,8 +4,9 @@ import Searchbar from 'components/Searchbar';
 import Pagination from 'components/Pagination/Pagination';
 import Loader from 'components/Loader/Loader';
 
-import MoviesList from 'components/MoviesList';
+import MoviesList from 'components/MoviesList/MoviesList';
 import { fetchMoviesByName } from 'services/movie-api';
+import { Container } from 'components/Container/Container';
 const Movies = () => {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
@@ -64,7 +65,7 @@ const Movies = () => {
       {error ? (
         <p>{error}</p>
       ) : (
-        <>
+        <Container>
           <Searchbar onSubmit={handleSubmit} />
           {isLoading && <Loader />}
           {totalResults === 0 && query && !error ? (
@@ -78,7 +79,7 @@ const Movies = () => {
               />
             </>
           )}
-        </>
+        </Container>
       )}
     </main>
   );

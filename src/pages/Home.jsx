@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import Pagination from 'components/Pagination/Pagination';
-import MoviesList from 'components/MoviesList';
+import MoviesList from 'components/MoviesList/MoviesList';
 import { fetchTrendingMovies } from 'services/movie-api';
 import Loader from 'components/Loader/Loader';
+import { Container } from 'components/Container/Container';
 
 const Home = () => {
   const [page, setPage] = useState(1);
@@ -40,12 +41,12 @@ const Home = () => {
       {error ? (
         <p>{error}</p>
       ) : (
-        <>
+        <Container>
           <h1>Tranding movies</h1>
           {isLoading && <Loader />}
           <MoviesList movies={movies} />
           <Pagination pageCount={totalPages} onPageChange={handlePageChange} />
-        </>
+        </Container>
       )}
     </main>
   );
