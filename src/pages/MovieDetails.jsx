@@ -38,7 +38,8 @@ const MovieDetails = () => {
         <>
           {isLoading && <Loader />}
           <h1>
-            {title}({release_date?.slice(0, 4)})
+            {title}(
+            {release_date?.slice(0, 4) ? release_date?.slice(0, 4) : 'Unknown'})
           </h1>
           <img
             src={
@@ -53,14 +54,8 @@ const MovieDetails = () => {
           <span>User score{Math.round(vote_average * 10)}%</span>
           <h2>Overview</h2>
           <p>{overview}</p>
-          <ul>
-            <li>
-              <Link to="cast">Cast</Link>
-            </li>
-            <li>
-              <Link to="reviews">Reviews</Link>
-            </li>
-          </ul>
+          <Link to="cast">Cast</Link>
+          <Link to="reviews">Reviews</Link>
           <Outlet />
         </>
       )}
