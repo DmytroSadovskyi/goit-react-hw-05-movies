@@ -45,6 +45,9 @@ export const StyledReactPaginate = styled(ReactPaginate)`
     cursor: pointer;
   }
 
+  .disabled {
+    color: grey;
+  }
   .active {
     background-color: blue;
     color: white;
