@@ -4,8 +4,8 @@ export const SearchForm = styled.form`
   display: flex;
   margin: 0 auto;
   align-items: center;
-
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   border-radius: 8px;
   overflow: hidden;
   font-size: 20px;
