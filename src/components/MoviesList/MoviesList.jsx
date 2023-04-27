@@ -1,6 +1,12 @@
-import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
-import { List, ListItem, Wrapper, Image, Text } from './MoviesList.styled';
+import {
+  List,
+  ListItem,
+  Wrapper,
+  Image,
+  StyledLink,
+  Text,
+} from './MoviesList.styled';
 
 const MoviesList = ({ movies }) => {
   const location = useLocation();
@@ -8,7 +14,7 @@ const MoviesList = ({ movies }) => {
     <List>
       {movies.map(({ poster_path, title, id }) => (
         <ListItem key={id}>
-          <Link to={`/movies/${id}`} state={{ from: location }}>
+          <StyledLink to={`/movies/${id}`} state={{ from: location }}>
             <Wrapper>
               <Image
                 src={
@@ -20,7 +26,7 @@ const MoviesList = ({ movies }) => {
               />
               <Text>{title}</Text>
             </Wrapper>
-          </Link>
+          </StyledLink>
         </ListItem>
       ))}
     </List>
