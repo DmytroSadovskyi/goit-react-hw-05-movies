@@ -52,3 +52,14 @@ export async function fetchMovieCast(id) {
     console.error(error);
   }
 }
+
+export async function fetchMovieReviews(id) {
+  try {
+    const url = `${BASE_URL}movie/${id}/reviews?api_key=${API_KEY}&language=en-US`;
+    const response = await axios.get(url);
+    console.log(response);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+}
