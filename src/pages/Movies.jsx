@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import Searchbar from 'components/Searchbar';
+import Searchbar from 'components/Searchbar/Searchbar';
 import Pagination from 'components/Pagination/Pagination';
 import Loader from 'components/Loader/Loader';
 
