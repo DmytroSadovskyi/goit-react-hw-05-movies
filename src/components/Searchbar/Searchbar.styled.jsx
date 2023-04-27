@@ -6,9 +6,10 @@ export const SearchForm = styled.form`
   align-items: center;
 
   width: 300px;
-  border-radius: 3px;
+  border-radius: 8px;
   overflow: hidden;
   font-size: 20px;
+  border: 2px solid blue;
 `;
 
 export const SearchInput = styled.input`
@@ -18,6 +19,8 @@ export const SearchInput = styled.input`
   padding-left: 20px;
   font-size: 20px;
   border: none;
+  padding-top: 7px;
+  padding-bottom: 10px;
 
   ::placeholder {
     font-size: 18px;
