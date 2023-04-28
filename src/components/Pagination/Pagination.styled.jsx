@@ -4,18 +4,17 @@ import ReactPaginate from 'react-paginate';
 export const StyledReactPaginate = styled(ReactPaginate)`
   display: flex;
   flex-wrap: nowrap;
+  gap: 5px;
   padding: 0;
   margin-bottom: 30px;
   color: blue;
+  font-size: 14px;
   justify-content: center;
   align-items: center;
   list-style: none;
 
-  @media screen and (min-width: 768px) {
-    gap: 5px;
-  }
   .previous {
-    padding: 3px 3px;
+    padding: 2px 4px;
     @media screen and (min-width: 768px) {
       padding: 5px 10px;
     }
@@ -26,7 +25,7 @@ export const StyledReactPaginate = styled(ReactPaginate)`
   }
 
   .next {
-    padding: 3px 3px;
+    padding: 2px 4px;
     @media screen and (min-width: 768px) {
       padding: 5px 10px;
     }
@@ -36,7 +35,7 @@ export const StyledReactPaginate = styled(ReactPaginate)`
   }
 
   .page {
-    padding: 3px 3px;
+    padding: 2px 4px;
     @media screen and (min-width: 768px) {
       padding: 5px 10px;
     }
