@@ -4,7 +4,7 @@ import Pagination from 'components/Pagination/Pagination';
 import MoviesList from 'components/MoviesList/MoviesList';
 import { fetchTrendingMovies } from 'services/movie-api';
 import Loader from 'components/Loader/Loader';
-import { Container } from 'components/Container/Container';
+import Container from 'components/Container/Container';
 
 const Home = () => {
   const [page, setPage] = useState(1);
