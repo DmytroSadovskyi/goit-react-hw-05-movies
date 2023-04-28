@@ -7,11 +7,18 @@ export const Section = styled.section`
 export const GoBackLink = styled(Link)`
   display: inline-block;
   padding: 8px 12px;
-  text-decoration: none;
-  color: white;
-  background-color: blue;
-  border-radius: 5px;
   margin-bottom: 10px;
+  text-decoration: none;
+  color: black;
+  background-color: gainsboro;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+
+  :hover,
+  :focus {
+    background-color: blue;
+    color: white;
+  }
 `;
 
 export const MovieTitle = styled.h1`
@@ -67,4 +74,11 @@ export const InfoLink = styled(Link)`
   color: black;
   background-color: gainsboro;
   border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+
+  :hover,
+  :focus {
+    background-color: blue;
+    color: white;
+  }
 `;
