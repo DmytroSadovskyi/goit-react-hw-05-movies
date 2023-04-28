@@ -1,5 +1,5 @@
 import { StyledReactPaginate } from './Pagination.styled';
-
+import PropTypes from 'prop-types';
 const Pagination = ({ pageCount, onPageChange }) => {
   return (
     <StyledReactPaginate
@@ -17,6 +17,11 @@ const Pagination = ({ pageCount, onPageChange }) => {
       marginPagesDisplayed={1}
     />
   );
+};
+
+Pagination.propTypes = {
+  pageCount: PropTypes.number.isRequired,
+  onPageChange: PropTypes.func.isRequired,
 };
 
 export default Pagination;
