@@ -36,9 +36,9 @@ const MovieDetails = () => {
     loadMovieDetails();
   }, [Id]);
 
-  const { title, release_date, poster_path, vote_average, overview } =
+  const { title, release_date, poster_path, vote_average, overview, genres } =
     movieInfo;
-
+  const genresInfo = genres?.map(genre => genre.name).join(', ');
   return (
     <main>
       <Section>
@@ -70,6 +70,7 @@ const MovieDetails = () => {
                 User score: {Math.round(vote_average * 10)}%
               </UserScore>
             </MoviePosterWrapper>
+            <p>{genresInfo ? genresInfo : 'Unknown genre'}</p>
             <h2>Overview</h2>
             <p>{overview}</p>
             <ListOfLinks>
