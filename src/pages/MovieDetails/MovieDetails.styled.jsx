@@ -41,6 +41,19 @@ export const UserScore = styled.span`
   margin-bottom: 10px;
 `;
 
+export const Genres = styled.p`
+  margin-bottom: 10px;
+  text-align: center;
+`;
+
+export const OverviewTitle = styled.h2`
+  margin-bottom: 10px;
+`;
+
+export const OverviewContent = styled.p`
+  margin-bottom: 20px;
+`;
+
 export const ListOfLinks = styled.ul`
   display: flex;
   gap: 5px;
