@@ -56,3 +56,8 @@ export const ActorInfo = styled.div`
   padding: 10px;
   text-align: center;
 `;
+
+export const Character = styled.p`
+  color: blue;
+  font-size: large;
+`;
