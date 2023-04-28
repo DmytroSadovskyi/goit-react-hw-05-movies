@@ -31,7 +31,7 @@ const Cast = () => {
       ) : (
         <>
           {isLoading && <Loader />}
-          {movieCast.length === 0 && !error ? (
+          {movieCast?.length === 0 && !error ? (
             <h2>We didn't find info about cast</h2>
           ) : (
             <ul>
