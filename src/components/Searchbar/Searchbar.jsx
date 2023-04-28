@@ -5,6 +5,7 @@ import {
   SearchButtonLabel,
 } from './Searchbar.styled';
 import { HiMagnifyingGlass } from 'react-icons/hi2';
+import PropTypes from 'prop-types';
 
 const Searchbar = ({ onSubmit }) => {
   return (
@@ -25,4 +26,7 @@ const Searchbar = ({ onSubmit }) => {
   );
 };
 
+Searchbar.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
 export default Searchbar;
