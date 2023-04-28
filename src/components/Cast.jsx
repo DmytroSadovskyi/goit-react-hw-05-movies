@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { fetchMovieCast } from 'services/movie-api';
 import { useParams } from 'react-router-dom';
 import Loader from './Loader/Loader';
+import CastList from './CastList/CastList';
+
 const Cast = () => {
   const { Id } = useParams();
   const [movieCast, setMovieCast] = useState([]);
@@ -32,30 +34,9 @@ const Cast = () => {
         <>
           {isLoading && <Loader />}
           {movieCast?.length === 0 && !error ? (
-            <h2>We didn't find info about cast</h2>
+            <p>We didn't find info about cast</p>
           ) : (
-            <ul>
-              {movieCast.map(({ id, character, name, profile_path }) => (
-                <li key={id}>
-                  <img
-                    src={
-                      profile_path
-                        ? `https://image.tmdb.org/t/p/w300${profile_path}`
-                        : 'https://dummyimage.com/500x400/ff6b08/fff.jpg&text=Opps,+no+image...'
-                    }
-                    alt={name}
-                    width="150"
-                    height="200"
-                  />
-                  <p>
-                    <span>{name}</span>
-                  </p>
-                  <p>
-                    <span>{character}</span>
-                  </p>
-                </li>
-              ))}
-            </ul>
+            <CastList cast={movieCast} />
           )}
         </>
       )}
