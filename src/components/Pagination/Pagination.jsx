@@ -14,7 +14,7 @@ const Pagination = ({ pageCount, onPageChange }) => {
       pageClassName="page"
       activeClassName="active"
       pageRangeDisplayed={3}
-      marginPagesDisplayed={3}
+      marginPagesDisplayed={1}
     />
   );
 };
