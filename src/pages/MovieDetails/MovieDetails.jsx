@@ -11,6 +11,9 @@ import {
   UserScore,
   ListOfLinks,
   InfoLink,
+  OverviewTitle,
+  OverviewContent,
+  Genres,
 } from './MovieDetails.styled';
 
 const MovieDetails = () => {
@@ -70,9 +73,9 @@ const MovieDetails = () => {
                 User score: {Math.round(vote_average * 10)}%
               </UserScore>
             </MoviePosterWrapper>
-            <p>{genresInfo ? genresInfo : 'Unknown genre'}</p>
-            <h2>Overview</h2>
-            <p>{overview}</p>
+            <Genres>{genresInfo ? genresInfo : 'Unknown genre'}</Genres>
+            <OverviewTitle>Overview</OverviewTitle>
+            <OverviewContent>{overview}</OverviewContent>
             <ListOfLinks>
               <li>
                 <InfoLink to="cast">Cast</InfoLink>
