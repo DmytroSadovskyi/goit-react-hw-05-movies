@@ -42,7 +42,7 @@ const Home = () => {
         <p>{error}</p>
       ) : (
         <Container>
-          <h1>Trending movies</h1>
+          <h1 style={{ marginBottom: '20px' }}>Trending movies</h1>
           {isLoading && <Loader />}
           <MoviesList movies={movies} />
           <Pagination pageCount={totalPages} onPageChange={handlePageChange} />
