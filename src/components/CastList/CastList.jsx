@@ -1,5 +1,11 @@
 import PropTypes from 'prop-types';
-import { ActorInfo, CharacterImage, List, ListItem } from './CastList.styled';
+import {
+  ActorInfo,
+  CharacterImage,
+  List,
+  ListItem,
+  Character,
+} from './CastList.styled';
 const CastList = ({ cast }) => {
   return (
     <List>
@@ -19,9 +25,9 @@ const CastList = ({ cast }) => {
             <p>
               <span>{name}</span>
             </p>
-            <p>
+            <Character>
               <span>{character}</span>
-            </p>
+            </Character>
           </ActorInfo>
         </ListItem>
       ))}
