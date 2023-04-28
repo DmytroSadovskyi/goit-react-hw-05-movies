@@ -7,7 +7,7 @@ import toast, { Toaster } from 'react-hot-toast';
 
 import MoviesList from 'components/MoviesList/MoviesList';
 import { fetchMoviesByName } from 'services/movie-api';
-import { Container } from 'components/Container/Container';
+import Container from 'components/Container/Container';
 const Movies = () => {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
