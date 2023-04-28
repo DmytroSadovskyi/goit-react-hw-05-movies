@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+
 import Pagination from 'components/Pagination/Pagination';
 import MoviesList from 'components/MoviesList/MoviesList';
 import { fetchTrendingMovies } from 'services/movie-api';
