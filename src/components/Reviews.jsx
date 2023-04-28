@@ -35,7 +35,7 @@ const Reviews = () => {
         <>
           {isLoading && <Loader />}
           {totalResults === 0 && !error ? (
-            <h2>We didn't find any reviews for this movie</h2>
+            <p>We didn't find any reviews for this movie</p>
           ) : (
             <ul>
               {movieReviews.map(({ id, author, content }) => (
