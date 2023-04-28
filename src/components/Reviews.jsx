@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { fetchMovieReviews } from 'services/movie-api';
 import { useParams } from 'react-router-dom';
 import Loader from './Loader/Loader';
+import ReviewsList from './ReviewsList/ReviewsList';
 
 const Reviews = () => {
   const { Id } = useParams();
@@ -37,14 +38,7 @@ const Reviews = () => {
           {totalResults === 0 && !error ? (
             <p>We didn't find any reviews for this movie</p>
           ) : (
-            <ul>
-              {movieReviews.map(({ id, author, content }) => (
-                <li key={id}>
-                  <h3>{author}</h3>
-                  <p>{content}</p>
-                </li>
-              ))}
-            </ul>
+            <ReviewsList reviews={movieReviews} />
           )}
         </>
       )}
