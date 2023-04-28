@@ -5,10 +5,9 @@ export const StyledLink = styled(Link)`
   text-decoration: none;
 `;
 export const List = styled.ul`
-  list-style: none;
-  padding: 0;
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 25px;
   @media screen and (min-width: 320px) {
     gap: 20px;
   }
@@ -35,6 +34,8 @@ export const Wrapper = styled.div`
   width: 280px;
   display: flex;
   flex-direction: column;
+  border-radius: 5px;
+  overflow: hidden;
   cursor: pointer;
   box-shadow: 0px 0px 10px rgba(255, 255, 255, 0);
   transition: box-shadow 0.3s ease-in-out;
@@ -56,8 +57,6 @@ export const Image = styled.img`
   width: 280px;
   height: 398px;
   margin-bottom: 8px;
-  border-radius: 5px;
-  overflow: hidden;
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     width: 336px;
@@ -72,6 +71,7 @@ export const Image = styled.img`
 `;
 
 export const Text = styled.p`
+  margin-bottom: 10px;
   text-decoration: none;
   color: black;
 `;
