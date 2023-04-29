@@ -30,6 +30,7 @@ export const ListItem = styled.li`
     width: calc((100% - 2 * 16px) / 3);
   }
 `;
+
 export const Wrapper = styled.div`
   width: 280px;
   display: flex;
@@ -39,9 +40,54 @@ export const Wrapper = styled.div`
   cursor: pointer;
   box-shadow: 0px 0px 10px rgba(255, 255, 255, 0);
   transition: box-shadow 0.3s ease-in-out;
+  position: relative;
+
+  img {
+    display: block;
+    width: 280px;
+    height: 398px;
+    margin-bottom: 8px;
+    transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+      width: 336px;
+      height: 455px;
+    }
+
+    @media screen and (min-width: 1280px) {
+      width: 395px;
+      height: 574px;
+      margin-bottom: 12px;
+    }
+  }
+
+  span {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    visibility: hidden;
+    color: black;
+    font-weight: bold;
+    transition: visibility 0s ease-in-out;
+  }
+
   &:hover,
   &:focus {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+
+    img {
+      filter: blur(3px);
+      opacity: 0.7;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    span {
+      visibility: visible;
+      transform: translate(50%, 50%);
+      transition: visibility 0s ease-in-out 0.3s;
+    }
   }
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     width: 336px;
@@ -49,24 +95,6 @@ export const Wrapper = styled.div`
 
   @media screen and (min-width: 1280px) {
     width: 395px;
-  }
-`;
-
-export const Image = styled.img`
-  display: block;
-  width: 280px;
-  height: 398px;
-  margin-bottom: 8px;
-
-  @media screen and (min-width: 768px) and (max-width: 1279px) {
-    width: 336px;
-    height: 455px;
-  }
-
-  @media screen and (min-width: 1280px) {
-    width: 395px;
-    height: 574px;
-    margin-bottom: 12px;
   }
 `;
 
