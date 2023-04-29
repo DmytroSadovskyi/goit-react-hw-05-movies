@@ -4,10 +4,8 @@ import { Link } from 'react-router-dom';
 export const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px 20px 20px;
-  @media screen and (max-width: 768px) {
-    padding: 0 5px;
-  }
+  padding-left: 20px;
+  padding-right: 20px;
 `;
 export const GoBackLink = styled(Link)`
   display: inline-block;
