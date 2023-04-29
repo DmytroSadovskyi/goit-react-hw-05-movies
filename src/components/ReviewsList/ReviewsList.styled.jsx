@@ -24,4 +24,19 @@ export const List = styled.ul`
 
 export const ReviewAuthor = styled.h3`
   margin-bottom: 10px;
+  font-size: 1.5rem;
+  font-weight: 500;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+`;
+
+export const ReviewContent = styled.p`
+  font-size: 1rem;
+  font-weight: 400;
+
+  @media screen and (max-width: 768px) {
+    font-size: 0.8rem;
+  }
 `;
