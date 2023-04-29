@@ -1,8 +1,13 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
-export const Section = styled.section`
-  padding: 10px 20px;
+export const Container = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 20px 20px;
+  @media screen and (max-width: 768px) {
+    padding: 0 5px;
+  }
 `;
 export const GoBackLink = styled(Link)`
   display: inline-block;
@@ -21,50 +26,109 @@ export const GoBackLink = styled(Link)`
   }
 `;
 
-export const MovieTitle = styled.h1`
-  margin-bottom: 15px;
-  text-align: center;
-`;
-
-export const MoviePosterWrapper = styled.div`
-  width: 150px;
+export const MovieWrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 5px;
-  margin: 0 auto;
-  margin-bottom: 15px;
-  text-align: center;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  border-radius: 5px;
-  overflow: hidden;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const MoviePoster = styled.img`
-  display: block;
-  margin-right: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  align-self: flex-start;
+
+  @media screen and (max-width: 768px) {
+    max-height: 450px;
+    align-self: center;
+  }
 `;
 
-export const UserScore = styled.span`
-  margin-bottom: 10px;
+export const Info = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: flex-start;
+  padding: 10px 20px;
+
+  @media screen and (max-width: 768px) {
+    padding: 10px 0;
+  }
+`;
+export const MovieTitle = styled.h2`
+  margin-top: 10px;
+  font-size: 2rem;
+  font-weight: 700;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+`;
+
+export const UserScore = styled.div`
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 10px 0;
+  display: flex;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+`;
+
+export const GenresTitle = styled.h3`
+  margin: 15px 0 5px 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 `;
 
 export const Genres = styled.p`
-  margin-bottom: 10px;
-  text-align: center;
+  margin: 5px 0;
+  font-size: 1rem;
+  font-weight: 400;
+
+  @media screen and (max-width: 768px) {
+    font-size: 0.8rem;
+  }
 `;
 
-export const OverviewTitle = styled.h2`
-  margin-bottom: 10px;
+export const OverviewTitle = styled.h3`
+  margin: 15px 0 5px 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 `;
 
 export const OverviewContent = styled.p`
-  margin-bottom: 20px;
+  margin: 5px 0;
+  font-size: 1rem;
+  font-weight: 400;
+
+  @media screen and (max-width: 768px) {
+    font-size: 0.8rem;
+  }
 `;
 
 export const ListOfLinks = styled.ul`
   display: flex;
-  gap: 5px;
-  margin-bottom: 15px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  list-style: none;
+  margin: 10px 0;
 `;
 
 export const InfoLink = styled(Link)`
