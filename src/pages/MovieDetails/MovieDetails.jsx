@@ -3,17 +3,19 @@ import { fetchMovieDetails } from 'services/movie-api';
 import { useState, useEffect, useRef } from 'react';
 import Loader from 'components/Loader/Loader';
 import {
-  Section,
   GoBackLink,
   MovieTitle,
-  MoviePosterWrapper,
+  MovieWrapper,
   MoviePoster,
   UserScore,
   ListOfLinks,
   InfoLink,
+  Info,
   OverviewTitle,
   OverviewContent,
   Genres,
+  GenresTitle,
+  Container,
 } from './MovieDetails.styled';
 
 const MovieDetails = () => {
@@ -43,53 +45,53 @@ const MovieDetails = () => {
     movieInfo;
   const genresInfo = genres?.map(genre => genre.name).join(', ');
   return (
-    <main>
-      <Section>
-        <GoBackLink to={backLinkLocationRef.current}>Go Back</GoBackLink>
-        {error ? (
-          <p>{error}</p>
-        ) : (
-          <>
-            {isLoading && <Loader />}
-            <MovieTitle>
-              {title}(
-              {release_date?.slice(0, 4)
-                ? release_date?.slice(0, 4)
-                : 'Unknown'}
-              )
-            </MovieTitle>
-            <MoviePosterWrapper>
-              <MoviePoster
-                src={
-                  poster_path
-                    ? `https://image.tmdb.org/t/p/w500${poster_path}`
-                    : 'https://dummyimage.com/500x400/ff6b08/fff.jpg&text=Opps,+no+image...'
-                }
-                alt={title}
-                width="150"
-                height="200"
-              />
+    <>
+      {error ? (
+        <p>{error}</p>
+      ) : (
+        <Container>
+          {isLoading && <Loader />}
+          <GoBackLink to={backLinkLocationRef.current}>Go Back</GoBackLink>
+          <MovieWrapper>
+            <MoviePoster
+              src={
+                poster_path
+                  ? `https://image.tmdb.org/t/p/w500${poster_path}`
+                  : 'https://dummyimage.com/500x400/ff6b08/fff.jpg&text=Opps,+no+image...'
+              }
+              alt={title}
+              height="500"
+            />
+            <Info>
+              <MovieTitle>
+                {title}(
+                {release_date?.slice(0, 4)
+                  ? release_date?.slice(0, 4)
+                  : 'Unknown'}
+                )
+              </MovieTitle>
               <UserScore>
                 User score: {Math.round(vote_average * 10)}%
               </UserScore>
-            </MoviePosterWrapper>
-            <Genres>{genresInfo ? genresInfo : 'Unknown genre'}</Genres>
-            <OverviewTitle>Overview</OverviewTitle>
-            <OverviewContent>{overview}</OverviewContent>
-            <ListOfLinks>
-              <li>
-                <InfoLink to="cast">Cast</InfoLink>
-              </li>
-              <li>
-                <InfoLink to="reviews">Reviews</InfoLink>
-              </li>
-            </ListOfLinks>
+              <GenresTitle>Genres</GenresTitle>
+              <Genres>{genresInfo ? genresInfo : 'Unknown genre'}</Genres>
+              <OverviewTitle>Overview</OverviewTitle>
+              <OverviewContent>{overview}</OverviewContent>
+            </Info>
+          </MovieWrapper>
+          <ListOfLinks>
+            <li>
+              <InfoLink to="cast">Cast</InfoLink>
+            </li>
+            <li>
+              <InfoLink to="reviews">Reviews</InfoLink>
+            </li>
+          </ListOfLinks>
 
-            <Outlet />
-          </>
-        )}
-      </Section>
-    </main>
+          <Outlet />
+        </Container>
+      )}
+    </>
   );
 };
 
