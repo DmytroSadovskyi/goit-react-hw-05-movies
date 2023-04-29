@@ -64,9 +64,9 @@ export const Wrapper = styled.div`
   span {
     display: block;
     position: absolute;
-    top: 50%;
+    top: 40%;
     right: 50%;
-    transform: translate(50%, -50%);
+    transform: translate(-40%, -50%);
     visibility: hidden;
     color: black;
     font-weight: bold;
