@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Searchbar from 'components/Searchbar/Searchbar';
 import Pagination from 'components/Pagination/Pagination';
@@ -8,21 +8,29 @@ import toast, { Toaster } from 'react-hot-toast';
 import MoviesList from 'components/MoviesList/MoviesList';
 import { fetchMoviesByName } from 'services/movie-api';
 import Container from 'components/Container/Container';
+
 const Movies = () => {
-  const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [totalResults, setTotalResults] = useState(0);
   const [error, setError] = useState(null);
-  const [searchParams, setSearchParams] = useSearchParams();
-  const query = searchParams.get('query') ?? '';
+  const [searchParams, setSearchParams] = useSearchParams({
+    page: 1,
+    query: '',
+  });
+  const params = useMemo(
+    () => Object.fromEntries([...searchParams]),
+    [searchParams]
+  );
+  const page = Number(params.page || 1);
+  const { query } = params;
 
   useEffect(() => {
     if (!query) {
       return;
     }
-    const loadMoviesByQuery = async (page, query) => {
+    const loadMoviesByQuery = async () => {
       try {
         setIsLoading(true);
         const { results, total_pages, total_results } = await fetchMoviesByName(
@@ -39,26 +47,18 @@ const Movies = () => {
       }
     };
 
-    loadMoviesByQuery(page, query);
+    loadMoviesByQuery();
   }, [page, query]);
 
   const handleSubmit = e => {
     e.preventDefault();
-    const query = e.target.query.value;
+    const query = e.target.elements.query.value.trim();
     if (!query) {
       toast.error('Please type something');
       return;
     }
-    setSearchParams({ query });
-    setPage(1);
+    setSearchParams({ query: query, page: 1 });
     e.target.reset();
-  };
-
-  const handlePageChange = ({ selected }) => {
-    setPage(selected + 1);
-    const startIndex = selected * 20;
-    const endIndex = startIndex + 20;
-    setMovies(movies.slice(startIndex, endIndex));
   };
 
   return (
@@ -76,7 +76,9 @@ const Movies = () => {
               <MoviesList movies={movies} />
               <Pagination
                 pageCount={totalPages}
-                onPageChange={handlePageChange}
+                setSearchParams={setSearchParams}
+                params={params}
+                currentPage={Number(params?.page - 1) || 0}
               />
             </>
           )}
