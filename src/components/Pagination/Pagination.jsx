@@ -1,5 +1,5 @@
 import { StyledReactPaginate } from './Pagination.styled';
-import Loader from 'components/Loader/Loader';
+
 import PropTypes from 'prop-types';
 const Pagination = ({ pageCount, setSearchParams, params, currentPage }) => {
   const handlePageChange = e => {
