@@ -1,13 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import {
-  List,
-  ListItem,
-  Wrapper,
-  Image,
-  StyledLink,
-  Text,
-} from './MoviesList.styled';
+import { List, ListItem, Wrapper, StyledLink, Text } from './MoviesList.styled';
 
 const MoviesList = ({ movies }) => {
   const location = useLocation();
@@ -17,7 +10,7 @@ const MoviesList = ({ movies }) => {
         <ListItem key={id}>
           <StyledLink to={`/movies/${id}`} state={{ from: location }}>
             <Wrapper>
-              <Image
+              <img
                 src={
                   poster_path
                     ? `https://image.tmdb.org/t/p/w500${poster_path}`
@@ -25,6 +18,7 @@ const MoviesList = ({ movies }) => {
                 }
                 alt={title}
               />
+              <span>Click to see more info</span>
               <Text>{title}</Text>
             </Wrapper>
           </StyledLink>
