@@ -8,6 +8,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import MoviesList from 'components/MoviesList/MoviesList';
 import { fetchMoviesByName } from 'services/movie-api';
 import Container from 'components/Container/Container';
+import BackToTopButton from 'components/BackToTop/BackToTop';
 
 const Movies = () => {
   const [totalPages, setTotalPages] = useState(0);
@@ -85,6 +86,7 @@ const Movies = () => {
             </>
           )}
           <Toaster />
+          <BackToTopButton />
         </Container>
       )}
     </main>
