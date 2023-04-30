@@ -15,10 +15,9 @@ const Reviews = () => {
     const loadMovieReviews = async () => {
       try {
         setIsLoading(true);
-        const { data, results, total_results } = await fetchMovieReviews(Id);
+        const { results, total_results } = await fetchMovieReviews(Id);
         setMovieReviews(results);
         setTotalResults(total_results);
-        console.log(data);
       } catch (error) {
         setError('Error while loading data. Try again later.');
       } finally {
