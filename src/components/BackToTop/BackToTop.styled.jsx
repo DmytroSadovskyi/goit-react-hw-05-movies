@@ -10,7 +10,7 @@ export const Button = styled.button`
   bottom: 30px;
   height: 32px;
   width: 32px;
-
+  padding: 5px;
   justify-content: center;
   align-items: center;
   cursor: pointer;
