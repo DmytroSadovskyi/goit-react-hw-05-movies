@@ -74,12 +74,14 @@ const Movies = () => {
           ) : (
             <>
               <MoviesList movies={movies} />
-              <Pagination
-                pageCount={totalPages}
-                setSearchParams={setSearchParams}
-                params={params}
-                currentPage={Number(params?.page - 1) || 0}
-              />
+              {totalPages !== 0 && (
+                <Pagination
+                  pageCount={totalPages}
+                  setSearchParams={setSearchParams}
+                  params={params}
+                  currentPage={page - 1}
+                />
+              )}
             </>
           )}
           <Toaster />
