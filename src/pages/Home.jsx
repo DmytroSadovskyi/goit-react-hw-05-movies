@@ -44,12 +44,14 @@ const Home = () => {
           <h1 style={{ marginBottom: '20px' }}>Trending movies</h1>
           {isLoading && <Loader />}
           <MoviesList movies={movies} />
-          <Pagination
-            pageCount={totalPages}
-            setSearchParams={setSearchParams}
-            params={params}
-            currentPage={Number(params?.page - 1) || 0}
-          />
+          {totalPages !== 0 && (
+            <Pagination
+              pageCount={totalPages}
+              setSearchParams={setSearchParams}
+              params={params}
+              currentPage={page - 1}
+            />
+          )}
         </Container>
       )}
     </main>
