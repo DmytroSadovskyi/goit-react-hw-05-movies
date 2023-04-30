@@ -5,6 +5,7 @@ import MoviesList from 'components/MoviesList/MoviesList';
 import { fetchTrendingMovies } from 'services/movie-api';
 import Loader from 'components/Loader/Loader';
 import Container from 'components/Container/Container';
+import BackToTopButton from 'components/BackToTop/BackToTop';
 
 const Home = () => {
   const [totalPages, setTotalPages] = useState(0);
@@ -52,6 +53,7 @@ const Home = () => {
               currentPage={page - 1}
             />
           )}
+          <BackToTopButton />
         </Container>
       )}
     </main>
