@@ -15,6 +15,7 @@ const Reviews = () => {
     const loadMovieReviews = async () => {
       try {
         setIsLoading(true);
+        setError(null);
         const { results, total_results } = await fetchMovieReviews(Id);
         setMovieReviews(results);
         setTotalResults(total_results);
