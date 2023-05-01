@@ -30,6 +30,7 @@ const MovieDetails = () => {
     const loadMovieDetails = async () => {
       try {
         setIsLoading(true);
+        setError(null);
         const result = await fetchMovieDetails(Id);
         setMovieInfo(result);
       } catch (error) {
