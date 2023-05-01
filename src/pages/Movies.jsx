@@ -34,6 +34,7 @@ const Movies = () => {
     const loadMoviesByQuery = async () => {
       try {
         setIsLoading(true);
+        setError(null);
         const { results, total_pages, total_results } = await fetchMoviesByName(
           page,
           query
