@@ -23,6 +23,7 @@ const Home = () => {
     const loadMovies = async () => {
       try {
         setIsLoading(true);
+        setError(null);
         const { results, total_pages } = await fetchTrendingMovies(page);
         setMovies(results);
         setTotalPages(total_pages);
