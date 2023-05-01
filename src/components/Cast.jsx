@@ -14,8 +14,8 @@ const Cast = () => {
     const loadMovieCast = async () => {
       try {
         setIsLoading(true);
+        setError(null);
         const { cast } = await fetchMovieCast(Id);
-
         setMovieCast(cast);
       } catch (error) {
         setError('Error while loading data. Try again later.');
