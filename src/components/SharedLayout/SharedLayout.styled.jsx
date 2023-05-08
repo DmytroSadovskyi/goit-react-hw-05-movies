@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const Header = styled.header`
   display: flex;
@@ -16,15 +17,17 @@ export const Header = styled.header`
   }
 `;
 
-export const Logo = styled.p`
+export const Logo = styled(Link)`
   display: flex;
   align-items: center;
   font-weight: 700;
   margin: 0;
   gap: 5px;
+  text-decoration: none;
+  color: black;
 `;
 
-export const Link = styled(NavLink)`
+export const StyledLink = styled(NavLink)`
   padding: 8px 16px;
   border-radius: 4px;
   text-decoration: none;
