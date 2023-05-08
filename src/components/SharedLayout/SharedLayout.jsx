@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { Header, Logo, Link } from './SharedLayout.styled';
+import { Header, Logo, StyledLink } from './SharedLayout.styled';
 import { Suspense } from 'react';
 import Loader from 'components/Loader/Loader';
 import { BiMoviePlay } from 'react-icons/bi';
@@ -7,17 +7,17 @@ export const SharedLayout = () => {
   return (
     <>
       <Header>
-        <Logo>
+        <Logo to="/">
           <span role="img" aria-label="movie icon">
             <BiMoviePlay size="40" />
           </span>
           Movies App
         </Logo>
         <nav>
-          <Link to="/" end>
+          <StyledLink to="/" end>
             Home
-          </Link>
-          <Link to="/movies">Movies</Link>
+          </StyledLink>
+          <StyledLink to="/movies">Movies</StyledLink>
         </nav>
       </Header>
       <Suspense fallback={<Loader />}>
